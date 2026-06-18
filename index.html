@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>RISE Academy — Civic Leadership for Romania's Future</title>
+    <meta name="title" content="RISE Academy">
+    <meta name="description" content="RISE Academy is a civic leadership program for Romanian high school students, funded by Davis Projects for Peace and a Harvard startup grant.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://riseacademy.org">
+    <meta property="og:title" content="RISE Academy">
+    <meta property="og:description" content="A civic leadership program for Romanian high school students. Free, application-based, funded by Davis Projects for Peace.">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+
+    <style>
+        :root {
+            --green:       #05673b;
+            --green-dark:  #033d24;
+            --green-mid:   #065c34;
+            --green-light: #e6f4ed;
+            --gold:        #D4A017;
+            --gold-light:  #fdf3d7;
+            --white:       #ffffff;
+            --off-white:   #f7f9f7;
+            --text:        #1a1a1a;
+            --text-muted:  #5a6a62;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text);
+        }
+
+        h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* ── NAV ── */
+        .navbar-main {
+            background: linear-gradient(180deg, #065c34, #033d24);
+            padding: 0.75rem 0;
+        }
+        .navbar-main .navbar-brand img { height: 48px; }
+        .navbar-main .nav-link {
+            color: rgba(255,255,255,0.85) !important;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+            padding: 0.5rem 1rem !important;
+            transition: color 0.2s;
+        }
+        .navbar-main .nav-link:hover { color: var(--gold) !important; }
+        .navbar-main .dropdown-menu {
+            border: none;
+            box-shadow: 0 8px 32px rgba(3,61,36,0.15);
+            border-radius: 10px;
+        }
+        .navbar-main .dropdown-item {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.5rem 1.25rem;
+            color: var(--green-dark);
+        }
+        .navbar-main .dropdown-item:hover {
+            background: var(--green-light);
+            color: var(--green-dark);
+        }
+        .btn-nav-apply {
+            background: var(--gold);
+            color: var(--green-dark) !important;
+            border-radius: 50px;
+            font-weight: 800 !important;
+            font-size: 0.82rem !important;
+            padding: 0.45rem 1.25rem !important;
+            margin-left: 0.5rem;
+            transition: background 0.2s;
+        }
+        .btn-nav-apply:hover { background: #b8890f; color: var(--green-dark) !important; }
+
+        /* ── HERO ── */
+        .page-header {
+            min-height: 82vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-header-image {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(160deg, #065c34 0%, #022a18 100%);
+            z-index: 0;
+        }
+        /* subtle geometric texture */
+        .page-header-image::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                radial-gradient(circle at 80% 20%, rgba(212,160,23,0.08) 0%, transparent 50%),
+                radial-gradient(circle at 10% 80%, rgba(212,160,23,0.05) 0%, transparent 40%);
+        }
+        .page-header .container { position: relative; z-index: 1; }
+        .hero-eyebrow {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.78rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gold);
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        .hero-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(2.4rem, 5.5vw, 4rem);
+            line-height: 1.08;
+            color: #fff;
+            margin-bottom: 1.25rem;
+        }
+        .hero-title span { color: var(--gold); }
+        .hero-lead {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: rgba(255,255,255,0.78);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        .btn-hero-primary {
+            background: var(--gold);
+            color: var(--green-dark);
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 0.95rem;
+            padding: 0.85rem 2.25rem;
+            border: none;
+            transition: background 0.2s, transform 0.15s;
+            display: inline-block;
+        }
+        .btn-hero-primary:hover {
+            background: #b8890f;
+            color: var(--green-dark);
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+        .btn-hero-secondary {
+            background: transparent;
+            color: rgba(255,255,255,0.85);
+            border: 1.5px solid rgba(255,255,255,0.35);
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 0.85rem 2.25rem;
+            transition: border-color 0.2s, color 0.2s;
+            display: inline-block;
+        }
+        .btn-hero-secondary:hover {
+            border-color: rgba(255,255,255,0.7);
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* hero stats strip */
+        .hero-stats {
+            border-top: 1px solid rgba(255,255,255,0.12);
+            margin-top: 3rem;
+            padding-top: 2rem;
+        }
+        .hero-stat-item strong {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.9rem;
+            color: var(--gold);
+            line-height: 1;
+        }
+        .hero-stat-item span {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.55);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        .hero-stat-divider {
+            width: 1px;
+            background: rgba(255,255,255,0.12);
+            height: 40px;
+            align-self: center;
+        }
+
+        /* ── SECTIONS ── */
+        .section { padding: 5rem 0; }
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            color: var(--green-dark);
+        }
+        .section-lead {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        /* ── ABOUT — icon grid ── */
+        .about-icon-wrap {
+            width: 56px; height: 56px;
+            border-radius: 50%;
+            background: var(--green-light);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        .about-icon-wrap i { color: var(--green); font-size: 1.3rem; }
+        .about-col p {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--green-dark);
+            line-height: 1.5;
+        }
+
+        /* ── DARK SECTION ── */
+        .section-dark {
+            background: linear-gradient(180deg, #065c34, #033d24);
+            padding: 5rem 0;
+        }
+        .section-dark .section-title { color: #fff; }
+        .section-dark .section-sub { color: rgba(255,255,255,0.6); }
+
+        /* ── RESULT BADGE ── */
+        .result-badge {
+            background: #fff;
+            border-left: 4px solid var(--gold);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.65rem;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        .result-badge strong {
+            color: var(--green);
+            margin-right: 0.65rem;
+            min-width: 85px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* ── ROADMAP ── */
+        .roadmap-step {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+            align-items: flex-start;
+        }
+        .roadmap-step-number {
+            flex-shrink: 0;
+            width: 48px; height: 48px;
+            border-radius: 50%;
+            background: var(--green);
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.1rem;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .roadmap-step-body h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1rem;
+            color: var(--green-dark);
+            margin-bottom: 0.3rem;
+        }
+        .roadmap-step-body p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+            margin: 0;
+        }
+        .roadmap-destination {
+            background: var(--green);
+            border-radius: 12px;
+            padding: 1.5rem;
+            color: #fff;
+            margin-top: 0.5rem;
+        }
+        .roadmap-destination h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+        .roadmap-destination p {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.75);
+            margin: 0;
+        }
+
+        /* ── WHO CARDS ── */
+        .who-card {
+            border: none;
+            border-radius: 14px;
+            padding: 1.75rem;
+            background: var(--off-white);
+            border-top: 4px solid var(--green);
+            height: 100%;
+            transition: box-shadow 0.2s;
+        }
+        .who-card:hover { box-shadow: 0 8px 28px rgba(5,103,59,0.10); }
+        .who-card h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 0.95rem;
+            color: var(--green-dark);
+            margin-bottom: 0.5rem;
+        }
+        .who-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* ── TESTIMONIALS ── */
+        .testimonial-card {
+            background: #fff;
+            border: none;
+            border-radius: 14px;
+            border-left: 6px solid var(--green);
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(5,103,59,0.07);
+            margin-bottom: 1.5rem;
+        }
+        .testimonial-card p {
+            font-size: 0.97rem;
+            color: var(--green-dark);
+            font-style: italic;
+            line-height: 1.75;
+            margin-bottom: 0.75rem;
+        }
+        .testimonial-card .author {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 0.88rem;
+            color: var(--green);
+            font-style: normal;
+        }
+
+        /* ── VALUES PILLS ── */
+        .value-pill {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 0.95rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 0.65rem 1.75rem;
+            border-radius: 50px;
+            margin: 0.3rem;
+            color: #fff;
+        }
+
+        /* ── CTA ── */
+        .btn-cta-primary {
+            background: var(--green);
+            color: #fff;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 0.95rem;
+            padding: 0.85rem 2.25rem;
+            border: none;
+            transition: background 0.2s, transform 0.15s;
+            display: inline-block;
+        }
+        .btn-cta-primary:hover {
+            background: var(--green-dark);
+            color: #fff;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+        .btn-cta-gold {
+            background: var(--gold);
+            color: var(--green-dark);
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 0.95rem;
+            padding: 0.85rem 2.25rem;
+            border: none;
+            transition: background 0.2s;
+            display: inline-block;
+        }
+        .btn-cta-gold:hover {
+            background: #b8890f;
+            color: var(--green-dark);
+            text-decoration: none;
+        }
+        .btn-cta-outline {
+            background: transparent;
+            color: var(--green-dark);
+            border: 1.5px solid var(--green);
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 0.95rem;
+            padding: 0.85rem 2.25rem;
+            transition: background 0.2s, color 0.2s;
+            display: inline-block;
+        }
+        .btn-cta-outline:hover {
+            background: var(--green);
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* ── FOOTER ── */
+        .footer {
+            background: #fff;
+            padding: 3rem 0 1.5rem;
+            border-top: 1px solid #e0ece6;
+        }
+        .footer h3 { color: var(--green); font-family: 'Montserrat', sans-serif; font-weight: 700; }
+        .footer h4 { color: var(--text-muted); font-family: 'Open Sans', sans-serif; font-weight: 400; }
+        .footer a { color: var(--text-muted); }
+        .footer a:hover { color: var(--green); }
+        .footer .copyright { font-size: 0.85rem; color: var(--text-muted); }
+        .footer hr { border-color: #e0ece6; }
+        .btn-social {
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: var(--green-light);
+            color: var(--green);
+            font-size: 1rem;
+            margin: 0 4px;
+            transition: background 0.2s, color 0.2s;
+            border: none;
+        }
+        .btn-social:hover { background: var(--green); color: #fff; }
+
+        /* funder strip */
+        .funder-strip {
+            background: var(--green-light);
+            padding: 1.75rem 0;
+            text-align: center;
+        }
+        .funder-strip p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.85rem;
+        }
+        .funder-badge {
+            display: inline-block;
+            background: #fff;
+            border: 1px solid #c8dfd4;
+            border-radius: 8px;
+            padding: 0.55rem 1.25rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.82rem;
+            color: var(--green-dark);
+            margin: 0.2rem 0.4rem;
+        }
+
+        @media (max-width: 767px) {
+            .hero-stat-divider { display: none; }
+            .hero-stat-item { margin-bottom: 1rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-main navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand mr-2" href="#">
+            <!-- Replace with actual RISE logo: <img src="img/rise-logo.png" style="height:48px"> -->
+            <span style="font-family:'Montserrat',sans-serif; font-weight:900; color:#fff; font-size:1.4rem; letter-spacing:0.04em;">RISE <span style="color:var(--gold);">Academy</span></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_rise">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbar_rise">
+            <ul class="navbar-nav ml-auto align-items-lg-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#program">Program</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#who">Who We're For</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#team">Team</a>
+                </li>
+                <li class="nav-item">
+                    <!-- Replace href with your Google Form / Typeform link -->
+                    <a class="nav-link btn-nav-apply" href="https://forms.gle/YOUR_FORM_LINK_HERE" target="_blank">Apply Now</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- END NAVBAR -->
+
+<!-- HERO -->
+<div class="page-header" id="hero">
+    <div class="page-header-image"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 mx-auto text-center">
+                <p class="hero-eyebrow">Civic Leadership Program · Romania · Free for All Participants</p>
+                <h1 class="hero-title">
+                    Lead with purpose.<br>
+                    <span>Build Romania's future.</span>
+                </h1>
+                <p class="hero-lead">
+                    RISE Academy is a civic leadership program for Romanian high school students who want to turn ideas into real community impact — funded by Davis Projects for Peace and a Harvard startup grant.
+                </p>
+                <a href="https://forms.gle/YOUR_FORM_LINK_HERE" target="_blank" class="btn-hero-primary mr-3">Register Your Interest</a>
+                <a href="#about" class="btn-hero-secondary">Learn More</a>
+            </div>
+        </div>
+        <div class="row hero-stats justify-content-center">
+            <div class="col-auto text-center hero-stat-item">
+                <strong>Davis</strong>
+                <span>Projects for Peace</span>
+            </div>
+            <div class="hero-stat-divider d-none d-md-block mx-4"></div>
+            <div class="col-auto text-center hero-stat-item">
+                <strong>Harvard</strong>
+                <span>Startup Grant</span>
+            </div>
+            <div class="hero-stat-divider d-none d-md-block mx-4"></div>
+            <div class="col-auto text-center hero-stat-item">
+                <strong>Free</strong>
+                <span>For All Participants</span>
+            </div>
+            <div class="hero-stat-divider d-none d-md-block mx-4"></div>
+            <div class="col-auto text-center hero-stat-item">
+                <strong>2026</strong>
+                <span>First Cohort</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END HERO -->
+
+<!-- ABOUT -->
+<section class="section" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto text-center mb-5">
+                <h3 class="section-title">What is RISE Academy?</h3>
+                <p class="section-lead mt-3">
+                    Too many motivated young Romanians have ideas about how to improve their schools, communities, and country — but no structure to act on them. RISE fills that gap. We bring high school students together across Romania for workshops, mentorship, and a hands-on project accelerator that takes real civic ideas from concept to reality.
+                </p>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-3 about-col mb-4">
+                <div class="about-icon-wrap">
+                    <i class="fas fa-landmark"></i>
+                </div>
+                <p>Understanding civic systems and democratic institutions</p>
+            </div>
+            <div class="col-md-3 about-col mb-4">
+                <div class="about-icon-wrap">
+                    <i class="fas fa-users"></i>
+                </div>
+                <p>Building community projects that address real local problems</p>
+            </div>
+            <div class="col-md-3 about-col mb-4">
+                <div class="about-icon-wrap">
+                    <i class="fas fa-microphone-alt"></i>
+                </div>
+                <p>Developing leadership, public speaking, and communication skills</p>
+            </div>
+            <div class="col-md-3 about-col mb-4">
+                <div class="about-icon-wrap">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <p>Passion Project Accelerator — coaching for selected civic initiatives</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END ABOUT -->
+
+<!-- FUNDER STRIP -->
+<div class="funder-strip">
+    <p>Supported by</p>
+    <span class="funder-badge">Davis Projects for Peace</span>
+    <span class="funder-badge">Harvard Startup Grant</span>
+</div>
+
+<!-- PROGRAM / ROADMAP -->
+<section class="section" id="program" style="background: var(--off-white);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto text-center mb-5">
+                <h3 class="section-title">From where you are to where you want to be</h3>
+                <p class="section-lead mt-2">Every participant starts somewhere. We help you get to where you want to go.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="roadmap-step">
+                    <div class="roadmap-step-number">1</div>
+                    <div class="roadmap-step-body">
+                        <h5>Learn</h5>
+                        <p>Workshops on civic systems, leadership theory, public speaking, and social entrepreneurship — led by practitioners, not just lecturers.</p>
+                    </div>
+                </div>
+                <div class="roadmap-step">
+                    <div class="roadmap-step-number">2</div>
+                    <div class="roadmap-step-body">
+                        <h5>Act</h5>
+                        <p>Every participant works on a real community project. You won't just study civic leadership — you'll practice it, with support at every step.</p>
+                    </div>
+                </div>
+                <div class="roadmap-step">
+                    <div class="roadmap-step-number">3</div>
+                    <div class="roadmap-step-body">
+                        <h5>Passion Project Accelerator</h5>
+                        <p>Selected students get dedicated coaching to develop and pitch a civic initiative. Real mentors, real feedback, real stakes.</p>
+                    </div>
+                </div>
+                <div class="roadmap-destination">
+                    <h5>A National Network</h5>
+                    <p>Connect with peers, mentors, and partner organizations across Romania — a community that lasts far beyond the program.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mt-4 mt-md-0">
+                <div class="section-dark" style="border-radius: 16px; padding: 2.5rem;">
+                    <h5 style="font-family:'Montserrat',sans-serif; font-weight:900; color:#fff; font-size:1.1rem; margin-bottom:1.5rem;">What RISE covers</h5>
+                    <div class="result-badge"><strong>Workshops</strong> Civic systems, leadership, public speaking</div>
+                    <div class="result-badge"><strong>Mentorship</strong> 1-on-1 guidance from practitioners</div>
+                    <div class="result-badge"><strong>Community</strong> City events across Romania</div>
+                    <div class="result-badge"><strong>Projects</strong> Hands-on community action</div>
+                    <div class="result-badge"><strong>Accelerator</strong> Passion Project coaching track</div>
+                    <div class="result-badge"><strong>Network</strong> National peer & NGO community</div>
+                    <div class="result-badge" style="border-left-color: var(--green);"><strong style="color:var(--green);">Cost</strong> Completely free</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END PROGRAM -->
+
+<!-- WHO -->
+<section class="section" id="who">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto text-center mb-5">
+                <h3 class="section-title">Who should apply</h3>
+                <p class="section-lead mt-2">You don't need experience. You need curiosity and drive.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="who-card">
+                    <h5>High school students (grades 9–12)</h5>
+                    <p>Any student currently enrolled in a Romanian high school. Applications are open across cities — we come to you.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="who-card">
+                    <h5>People who care about their community</h5>
+                    <p>You don't need a polished project idea — just genuine interest in making things better for the people around you.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="who-card">
+                    <h5>Future leaders of any field</h5>
+                    <p>Whether you're going into medicine, engineering, law, or the arts — civic leadership is relevant to every path.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="who-card">
+                    <h5>Students who want to build, not just listen</h5>
+                    <p>RISE is hands-on. If you want to sit in a lecture hall and take notes, this isn't for you. If you want to do the work — welcome.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END WHO -->
+
+<!-- TEAM -->
+<section class="section" id="team" style="background: var(--off-white);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto text-center mb-5">
+                <h3 class="section-title">The team behind RISE</h3>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4 text-center mb-4">
+                <div style="width:80px;height:80px;border-radius:50%;background:var(--green-light);margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;">
+                    <span style="font-family:'Montserrat',sans-serif;font-weight:900;color:var(--green);font-size:1.5rem;">EM</span>
+                </div>
+                <h5 style="font-family:'Montserrat',sans-serif;font-weight:800;color:var(--green-dark);margin-bottom:0.2rem;">Emma</h5>
+                <p style="font-size:0.85rem;color:var(--text-muted);font-weight:600;margin-bottom:0.5rem;">Co-founder & CEO</p>
+                <p style="font-size:0.85rem;color:var(--text-muted);">Wellesley College · Gordon-MIT Fellow · Founder of VSSIA</p>
+            </div>
+            <div class="col-md-4 text-center mb-4">
+                <div style="width:80px;height:80px;border-radius:50%;background:var(--green-light);margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;">
+                    <span style="font-family:'Montserrat',sans-serif;font-weight:900;color:var(--green);font-size:1.5rem;">CC</span>
+                </div>
+                <h5 style="font-family:'Montserrat',sans-serif;font-weight:800;color:var(--green-dark);margin-bottom:0.2rem;">Cristian Coceangă</h5>
+                <p style="font-size:0.85rem;color:var(--text-muted);font-weight:600;margin-bottom:0.5rem;">Co-founder</p>
+                <p style="font-size:0.85rem;color:var(--text-muted);">Harvard University · Class of 2030</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END TEAM -->
+
+<!-- VALUES PILLS -->
+<section class="section-dark text-center">
+    <div class="container">
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-8">
+                <h3 style="font-family:'Montserrat',sans-serif;font-weight:900;color:#fff;margin-bottom:0.5rem;">Our values</h3>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-auto mb-2"><span class="value-pill" style="background: var(--green-mid);">Civic Courage</span></div>
+            <div class="col-auto mb-2"><span class="value-pill" style="background: var(--gold); color: var(--green-dark);">Accessibility</span></div>
+            <div class="col-auto mb-2"><span class="value-pill" style="background: var(--green-mid);">Community</span></div>
+            <div class="col-auto mb-2"><span class="value-pill" style="background: var(--gold); color: var(--green-dark);">Accountability</span></div>
+            <div class="col-auto mb-2"><span class="value-pill" style="background: var(--green-mid);">Action over words</span></div>
+        </div>
+    </div>
+</section>
+<!-- END VALUES -->
+
+<!-- CTA -->
+<section class="section text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <h3 class="section-title" style="font-size:2rem;">YOUR STORY STARTS HERE.</h3>
+                <p class="section-lead mt-3">
+                    Interest registration takes 2 minutes. We'll reach out with details about the cohort in your city. The program is completely free.
+                </p>
+                <!-- Replace href with your actual form link -->
+                <a href="https://forms.gle/YOUR_FORM_LINK_HERE" target="_blank" class="btn-cta-gold mr-3 mt-3">Register Your Interest</a>
+                <a href="mailto:contact@riseacademy.org" class="btn-cta-outline mt-3">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END CTA -->
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="row align-items-center mb-4">
+            <div class="col-lg-6">
+                <h3 class="font-weight-light mb-1">Thank you for your support.</h3>
+                <h4 class="mb-0">Follow us on social media.</h4>
+            </div>
+            <div class="col-lg-6 text-lg-right mt-3 mt-lg-0">
+                <button class="btn-social" onclick="window.open('https://instagram.com/riseacademy.ro','_blank')">
+                    <i class="fab fa-instagram"></i>
+                </button>
+                <button class="btn-social" onclick="window.open('https://facebook.com/riseacademy','_blank')">
+                    <i class="fab fa-facebook-f"></i>
+                </button>
+                <button class="btn-social" onclick="window.open('https://linkedin.com/company/riseacademy','_blank')">
+                    <i class="fab fa-linkedin-in"></i>
+                </button>
+            </div>
+        </div>
+        <hr>
+        <div class="row align-items-center">
+            <div class="col-lg copyright">
+                <a href="#">Privacy Policy</a> &nbsp;|&nbsp;
+                &copy; 2026 RISE Academy · Romania
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- END FOOTER -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
