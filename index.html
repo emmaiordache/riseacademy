@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>RISE Academy: Civic Leadership for Romania's Future</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>RISE Academy: Civic Leadership Across Eastern Europe</title>
     <meta name="title" content="RISE Academy">
-    <meta name="description" content="RISE Academy is a civic leadership program for Romanian high school students, building skills and real community projects through workshops, mentorship, and hands-on initiatives.">
+    <meta name="description" content="RISE Academy is a civic leadership program for high school students across Eastern Europe, building skills and real community projects through workshops, mentorship, and hands-on initiatives.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://riseacademy.ro">
     <meta property="og:title" content="RISE Academy">
-    <meta property="og:description" content="A civic leadership program for Romanian high school students. Workshops, mentorship, and hands-on community projects.">
+    <meta property="og:description" content="A civic leadership program for high school students across Eastern Europe. Workshops, mentorship, and hands-on community projects.">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -21,10 +22,10 @@
             --green-dark:  #033d24;
             --green-mid:   #065c34;
             --green-light: #e6f4ed;
-            --accent:        #6FB7E0;
-            --accent-strong: #1F5C86;
-            --accent-strong-dark: #143F5C;
-            --accent-light:  #EAF2F8;
+            --accent:        #7FBF98;
+            --accent-strong: #2E7D4F;
+            --accent-strong-dark: #1F5D39;
+            --accent-light:  #E3F3E9;
             --white:       #ffffff;
             --off-white:   #f7f9f7;
             --text:        #1a1a1a;
@@ -86,7 +87,7 @@
 
         /* ── HERO ── */
         .page-header {
-            min-height: 82vh;
+            min-height: 78vh;
             display: flex;
             align-items: center;
             position: relative;
@@ -103,8 +104,8 @@
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
             background-image:
-                radial-gradient(circle at 80% 20%, rgba(111,183,224,0.10) 0%, transparent 50%),
-                radial-gradient(circle at 10% 80%, rgba(111,183,224,0.06) 0%, transparent 40%);
+                radial-gradient(circle at 80% 20%, rgba(127,191,152,0.10) 0%, transparent 50%),
+                radial-gradient(circle at 10% 80%, rgba(127,191,152,0.06) 0%, transparent 40%);
         }
         .page-header .container { position: relative; z-index: 1; }
         .hero-eyebrow {
@@ -131,7 +132,7 @@
             line-height: 1.75;
             color: rgba(255,255,255,0.78);
             max-width: 600px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 2.5rem;
         }
         .btn-hero-primary {
             background: var(--accent-strong);
@@ -169,32 +170,6 @@
             text-decoration: none;
         }
 
-        .hero-stats {
-            border-top: 1px solid rgba(255,255,255,0.12);
-            margin-top: 3rem;
-            padding-top: 2rem;
-        }
-        .hero-stat-item strong {
-            display: block;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 1.9rem;
-            color: var(--accent);
-            line-height: 1;
-        }
-        .hero-stat-item span {
-            font-size: 0.78rem;
-            color: rgba(255,255,255,0.55);
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-        }
-        .hero-stat-divider {
-            width: 1px;
-            background: rgba(255,255,255,0.12);
-            height: 40px;
-            align-self: center;
-        }
-
         /* ── SECTIONS ── */
         .section { padding: 5rem 0; }
         .section-title {
@@ -208,15 +183,15 @@
             line-height: 1.8;
         }
 
-        /* ── ABOUT — icon grid ── */
+        /* ── ABOUT — icon grid (inline SVG, no external icon font dependency) ── */
         .about-icon-wrap {
-            width: 56px; height: 56px;
-            border-radius: 50%;
-            background: var(--green-light);
+            width: 60px; height: 60px;
+            border-radius: 16px;
+            background: var(--accent-light);
             display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 1rem;
+            margin: 0 auto 1.1rem;
         }
-        .about-icon-wrap i { color: var(--green); font-size: 1.3rem; }
+        .about-icon-wrap svg { width: 28px; height: 28px; stroke: var(--accent-strong); }
         .about-col p {
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
@@ -233,23 +208,31 @@
         .section-dark .section-title { color: #fff; }
         .section-dark .section-sub { color: rgba(255,255,255,0.6); }
 
-        /* ── RESULT BADGE ── */
-        .result-badge {
-            background: #fff;
-            border-left: 4px solid var(--accent-strong);
-            border-radius: 8px;
-            padding: 0.75rem 1rem;
-            margin-bottom: 0.65rem;
-            display: flex;
-            align-items: center;
-            font-size: 0.9rem;
+        /* ── MINIMAL INFO LIST (replaces boxed badges) ── */
+        .minimal-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
         }
-        .result-badge strong {
-            color: var(--green);
-            margin-right: 0.65rem;
-            min-width: 85px;
+        .minimal-list li {
+            display: flex;
+            align-items: baseline;
+            gap: 0.9rem;
+            padding: 0.85rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+            font-size: 0.92rem;
+            color: rgba(255,255,255,0.85);
+        }
+        .minimal-list li:last-child { border-bottom: none; }
+        .minimal-list strong {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
+            font-size: 0.82rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            color: var(--accent);
+            min-width: 110px;
+            flex-shrink: 0;
         }
 
         /* ── ROADMAP ── */
@@ -294,3 +277,552 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
             font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+        .roadmap-destination p {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.75);
+            margin: 0;
+        }
+
+        /* ── WHO / SUMMER CARDS ── */
+        .who-card {
+            border: none;
+            border-radius: 14px;
+            padding: 1.75rem;
+            background: var(--off-white);
+            border-top: 4px solid var(--green);
+            height: 100%;
+            transition: box-shadow 0.2s;
+        }
+        .who-card:hover { box-shadow: 0 8px 28px rgba(5,103,59,0.10); }
+        .who-card h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 0.95rem;
+            color: var(--green-dark);
+            margin-bottom: 0.5rem;
+        }
+        .who-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+            margin: 0;
+        }
+        .who-card.accent-top { border-top-color: var(--accent-strong); }
+
+        /* ── VALUES PILLS ── */
+        .value-pill {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 0.95rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 0.65rem 1.75rem;
+            border-radius: 50px;
+            margin: 0.3rem;
+            color: #fff;
+        }
+
+        /* ── CTA ── */
+        .btn-cta-primary {
+            background: var(--green);
+            color: #fff;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 0.95rem;
+            padding: 0.85rem 2.25rem;
+            border: none;
+            transition: background 0.2s, transform 0.15s;
+            display: inline-block;
+        }
+        .btn-cta-primary:hover {
+            background: var(--green-dark);
+            color: #fff;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+        .btn-cta-accent {
+            background: var(--accent-strong);
+            color: #fff;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 0.95rem;
+            padding: 0.85rem 2.25rem;
+            border: none;
+            transition: background 0.2s;
+            display: inline-block;
+        }
+        .btn-cta-accent:hover {
+            background: var(--accent-strong-dark);
+            color: #fff;
+            text-decoration: none;
+        }
+        .btn-cta-outline {
+            background: transparent;
+            color: var(--green-dark);
+            border: 1.5px solid var(--green);
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 0.95rem;
+            padding: 0.85rem 2.25rem;
+            transition: background 0.2s, color 0.2s;
+            display: inline-block;
+        }
+        .btn-cta-outline:hover {
+            background: var(--green);
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* ── TEAM PHOTOS ── */
+        .team-photo-wrap {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            overflow: hidden;
+            background: var(--green-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .team-photo-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            z-index: 1;
+        }
+        .team-photo-fallback {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            color: var(--green);
+            font-size: 1.8rem;
+            position: absolute;
+            z-index: 0;
+        }
+        .team-group-photo {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 12px 40px rgba(3,61,36,0.15);
+        }
+
+        /* ── FOOTER ── */
+        .footer {
+            background: #fff;
+            padding: 3rem 0 1.5rem;
+            border-top: 1px solid #e0ece6;
+        }
+        .footer h3 { color: var(--green); font-family: 'Montserrat', sans-serif; font-weight: 700; }
+        .footer h4 { color: var(--text-muted); font-family: 'Open Sans', sans-serif; font-weight: 400; }
+        .footer a { color: var(--text-muted); }
+        .footer a:hover { color: var(--green); }
+        .footer .copyright { font-size: 0.85rem; color: var(--text-muted); }
+        .footer hr { border-color: #e0ece6; }
+        .btn-social {
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            display: inline-flex; align-items: center; justify-content: center;
+            background: var(--green-light);
+            color: var(--green);
+            font-size: 1rem;
+            margin: 0 4px;
+            transition: background 0.2s, color 0.2s;
+            border: none;
+        }
+        .btn-social:hover { background: var(--green); color: #fff; }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-main navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand mr-2" href="#hero">
+            <!-- Replace with actual RISE logo: <img src="img/rise-logo.png" style="height:48px"> -->
+            <span style="font-family:'Montserrat',sans-serif; font-weight:900; color:#fff; font-size:1.4rem; letter-spacing:0.04em;">RISE <span style="color:var(--accent);">Academy</span></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_rise">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbar_rise">
+            <ul class="navbar-nav ml-auto align-items-lg-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#summer">This Summer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#program">Program</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#who">Who We're For</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#team">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-nav-apply" href="https://forms.gle/cGySWUVyTL2NGQNfA" target="_blank">Interest Form</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- END NAVBAR -->
+
+<!-- HERO -->
+<div class="page-header" id="hero">
+    <div class="page-header-image"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 mx-auto text-center">
+                <p class="hero-eyebrow">Civic Leadership Program · Eastern Europe</p>
+                <h1 class="hero-title">
+                    Lead with purpose.<br>
+                    <span>Build Eastern Europe's future.</span>
+                </h1>
+                <p class="hero-lead">
+                    RISE Academy is a civic leadership program for high school students across Eastern Europe who want to turn ideas into real community impact.
+                </p>
+                <a href="https://forms.gle/cGySWUVyTL2NGQNfA" target="_blank" class="btn-hero-primary mr-3">Interest Form</a>
+                <a href="https://linktr.ee/riseacademy.ro" target="_blank" class="btn-hero-secondary">Our Events</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END HERO -->
+
+<!-- ABOUT -->
+<section class="section" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto text-center mb-5">
+                <h3 class="section-title">What is RISE Academy?</h3>
+                <p class="section-lead mt-3">
+                    Too many motivated young people across Eastern Europe have ideas about how to improve their schools, communities, and countries, but no clear structure to act on them. RISE fills that gap: we bring high school students together for workshops, mentorship, and a hands-on project incubator that takes real civic ideas from concept to reality.
+                </p>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-3 about-col mb-4">
+                <div class="about-icon-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9.5 12 4l9 5.5"/>
+                        <path d="M5 10v9M9 10v9M15 10v9M19 10v9"/>
+                        <path d="M3 19h18"/>
+                        <path d="M3 9.5h18"/>
+                    </svg>
+                </div>
+                <p>Understanding civic systems and democratic institutions</p>
+            </div>
+            <div class="col-md-3 about-col mb-4">
+                <div class="about-icon-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                <p>Building community projects that address real local problems</p>
+            </div>
+            <div class="col-md-3 about-col mb-4">
+                <div class="about-icon-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 19v3"/>
+                        <path d="M8 22h8"/>
+                        <rect x="9" y="2" width="6" height="12" rx="3"/>
+                        <path d="M5 10a7 7 0 0 0 14 0"/>
+                    </svg>
+                </div>
+                <p>Developing leadership, public speaking, and communication skills</p>
+            </div>
+            <div class="col-md-3 about-col mb-4">
+                <div class="about-icon-wrap">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 18h6"/>
+                        <path d="M10 21h4"/>
+                        <path d="M12 3a6 6 0 0 0-4 10.5c.6.55 1 1.3 1 2.1V16h6v-.4c0-.8.4-1.55 1-2.1A6 6 0 0 0 12 3Z"/>
+                    </svg>
+                </div>
+                <p>Passion Project Incubator: coaching for selected civic initiatives</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END ABOUT -->
+
+<!-- THIS SUMMER: AGORA LAB -->
+<section class="section" id="summer" style="background: var(--off-white);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto text-center mb-5">
+                <h3 class="section-title">This Summer: AGORA Civic Leadership &amp; Action Lab</h3>
+                <p class="section-lead mt-2">
+                    A free, full-day, in-person program for students who want to turn a civic idea into a real initiative, supported by Projects for Peace and held in multiple cities across Eastern Europe.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 mx-auto mb-5">
+                <p class="section-lead" style="text-align:center;">
+                    Through short presentations, hands-on team exercises, and direct feedback from mentors, participants define a community problem, map the people and resources needed to address it, and build and pitch a concrete project. Winning teams receive prizes and are invited to a follow-up online bootcamp on September 5 and 6 for continued support in developing their project.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="who-card accent-top">
+                    <h5>Reflect &amp; Learn</h5>
+                    <p>We open with a reflection on peacebuilding, then dive into participatory democracy, global citizenship, and civic leadership through a hands-on exercise.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="who-card accent-top">
+                    <h5>Engage Stakeholders &amp; Funding</h5>
+                    <p>Participants build a stakeholder map for their chosen problem: potential partners, funders, and institutions, along with an estimated budget.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="who-card accent-top">
+                    <h5>Build Your Civic Story</h5>
+                    <p>Mentors share their own experience, and participants craft their own civic story to weave into their final pitch.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="who-card accent-top">
+                    <h5>Pitch, Win &amp; Keep Building</h5>
+                    <p>Teams pitch their projects to judges. Winners receive prizes and continued support through our online bootcamp.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 mx-auto text-center mt-3">
+                <p class="section-lead mb-4">Spots are limited in each city. Head to our Linktree to see all the dates and locations and register for this summer's Lab.</p>
+                <a href="https://linktr.ee/riseacademy.ro" target="_blank" class="btn-cta-accent">Our Events</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END THIS SUMMER -->
+
+<!-- PROGRAM / ROADMAP -->
+<section class="section" id="program">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto text-center mb-5">
+                <h3 class="section-title">From where you are to where you want to be</h3>
+                <p class="section-lead mt-2">Every participant starts somewhere. We help you get to where you want to go.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="roadmap-step">
+                    <div class="roadmap-step-number">1</div>
+                    <div class="roadmap-step-body">
+                        <h5>Learn</h5>
+                        <p>Workshops on civic systems, leadership theory, public speaking, and social entrepreneurship, led by practitioners, not just lecturers.</p>
+                    </div>
+                </div>
+                <div class="roadmap-step">
+                    <div class="roadmap-step-number">2</div>
+                    <div class="roadmap-step-body">
+                        <h5>Act</h5>
+                        <p>Every participant works on a real community project. You won't just study civic leadership, you'll practice it, with support at every step.</p>
+                    </div>
+                </div>
+                <div class="roadmap-step">
+                    <div class="roadmap-step-number">3</div>
+                    <div class="roadmap-step-body">
+                        <h5>Passion Project Incubator</h5>
+                        <p>Selected students get dedicated coaching to develop and pitch a civic initiative. Real mentors, real feedback, real stakes.</p>
+                    </div>
+                </div>
+                <div class="roadmap-destination">
+                    <h5>A Regional Network</h5>
+                    <p>Connect with peers, mentors, and partner organizations across Eastern Europe, a community that lasts far beyond the program.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mt-4 mt-md-0">
+                <div class="section-dark" style="border-radius: 16px; padding: 2.5rem;">
+                    <h5 style="font-family:'Montserrat',sans-serif; font-weight:900; color:#fff; font-size:1.1rem; margin-bottom:1.25rem;">What RISE covers</h5>
+                    <ul class="minimal-list">
+                        <li><strong>Workshops</strong> Civic systems, leadership, public speaking</li>
+                        <li><strong>Mentorship</strong> 1-on-1 guidance from practitioners</li>
+                        <li><strong>Community</strong> Events across Eastern Europe</li>
+                        <li><strong>Projects</strong> Hands-on community action</li>
+                        <li><strong>Incubator</strong> Passion Project coaching track</li>
+                        <li><strong>Network</strong> Regional peer & NGO community</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END PROGRAM -->
+
+<!-- WHO -->
+<section class="section" id="who" style="background: var(--off-white);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto text-center mb-5">
+                <h3 class="section-title">Who should apply</h3>
+                <p class="section-lead mt-2">You don't need experience. You need curiosity and drive.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="who-card">
+                    <h5>High school students (grades 9–12)</h5>
+                    <p>Any student currently enrolled in high school across Eastern Europe. Our lab runs across different cities, we come to you.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="who-card">
+                    <h5>People who care about their community</h5>
+                    <p>You don't need a polished project idea, just genuine interest in making things better for the people around you.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="who-card">
+                    <h5>Future leaders of any field</h5>
+                    <p>Whether you're going into medicine, engineering, law, or the arts, civic leadership is relevant to every path.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="who-card">
+                    <h5>Students who want to build, not just listen</h5>
+                    <p>RISE is hands-on. If you want to sit in a lecture hall and take notes, this isn't for you. If you want to do the work, welcome.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END WHO -->
+
+<!-- TEAM -->
+<section class="section" id="team">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto text-center mb-5">
+                <h3 class="section-title">The team behind RISE</h3>
+            </div>
+        </div>
+
+        <!-- Optional group photo: uncomment once img/team.jpg is uploaded to your repo
+        <div class="row mb-5">
+            <div class="col-md-8 mx-auto">
+                <img src="img/team.jpg" alt="RISE Academy team" class="team-group-photo">
+            </div>
+        </div>
+        -->
+
+        <div class="row justify-content-center">
+            <div class="col-md-4 text-center mb-4">
+                <div class="team-photo-wrap">
+                    <span class="team-photo-fallback">EM</span>
+                    <!-- Once img/emma.jpg is uploaded, this shows automatically over the fallback initials -->
+                    <img src="img/emma.jpg" alt="Emma Iordache" onerror="this.style.display='none'">
+                </div>
+                <h5 style="font-family:'Montserrat',sans-serif;font-weight:800;color:var(--green-dark);margin-bottom:0.2rem;">
+                    <a href="https://www.linkedin.com/in/emma-iordache/" target="_blank" style="color:var(--green-dark);">Emma <i class="fab fa-linkedin" style="color:var(--accent-strong); font-size:0.85rem;"></i></a>
+                </h5>
+                <p style="font-size:0.85rem;color:var(--text-muted);font-weight:600;margin-bottom:0.5rem;">Co-founder & CEO</p>
+                <p style="font-size:0.85rem;color:var(--text-muted);">Wellesley College · Class of 2028</p>
+            </div>
+            <div class="col-md-4 text-center mb-4">
+                <div class="team-photo-wrap">
+                    <span class="team-photo-fallback">CC</span>
+                    <img src="img/cristian.jpg" alt="Cristian Coceanga" onerror="this.style.display='none'">
+                </div>
+                <h5 style="font-family:'Montserrat',sans-serif;font-weight:800;color:var(--green-dark);margin-bottom:0.2rem;">
+                    <a href="https://www.linkedin.com/in/cristian-coceanga/" target="_blank" style="color:var(--green-dark);">Cristian Coceangă <i class="fab fa-linkedin" style="color:var(--accent-strong); font-size:0.85rem;"></i></a>
+                </h5>
+                <p style="font-size:0.85rem;color:var(--text-muted);font-weight:600;margin-bottom:0.5rem;">Co-founder</p>
+                <p style="font-size:0.85rem;color:var(--text-muted);">Harvard University · Class of 2030</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END TEAM -->
+
+<!-- VALUES PILLS -->
+<section class="section-dark text-center">
+    <div class="container">
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-8">
+                <h3 style="font-family:'Montserrat',sans-serif;font-weight:900;color:#fff;margin-bottom:0.5rem;">Our values</h3>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-auto mb-2"><span class="value-pill" style="background: var(--green-mid);">Civic Courage</span></div>
+            <div class="col-auto mb-2"><span class="value-pill" style="background: var(--accent-strong);">Accessibility</span></div>
+            <div class="col-auto mb-2"><span class="value-pill" style="background: var(--green-mid);">Community</span></div>
+            <div class="col-auto mb-2"><span class="value-pill" style="background: var(--accent-strong);">Accountability</span></div>
+            <div class="col-auto mb-2"><span class="value-pill" style="background: var(--green-mid);">Action over words</span></div>
+        </div>
+    </div>
+</section>
+<!-- END VALUES -->
+
+<!-- CTA -->
+<section class="section text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <h3 class="section-title" style="font-size:2rem;">YOUR STORY STARTS HERE.</h3>
+                <p class="section-lead mt-3">
+                    Interest registration takes 2 minutes. We'll follow up with details about upcoming programs, including this summer's AGORA Civic Leadership & Action Lab.
+                </p>
+                <a href="https://forms.gle/cGySWUVyTL2NGQNfA" target="_blank" class="btn-cta-accent mr-3 mt-3">Interest Form</a>
+                <a href="mailto:office@riseacademy.ro" class="btn-cta-outline mt-3">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END CTA -->
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="row align-items-center mb-4">
+            <div class="col-lg-6">
+                <h3 class="font-weight-light mb-1">Thank you for your support.</h3>
+                <h4 class="mb-0">Follow us on social media.</h4>
+            </div>
+            <div class="col-lg-6 text-lg-right mt-3 mt-lg-0">
+                <button class="btn-social" onclick="window.open('https://instagram.com/riseacademy.ro','_blank')">
+                    <i class="fab fa-instagram"></i>
+                </button>
+                <button class="btn-social" onclick="window.open('https://facebook.com/riseacademy','_blank')">
+                    <i class="fab fa-facebook-f"></i>
+                </button>
+                <button class="btn-social" onclick="window.open('https://linkedin.com/company/riseacademy','_blank')">
+                    <i class="fab fa-linkedin-in"></i>
+                </button>
+            </div>
+        </div>
+        <hr>
+        <div class="row align-items-center">
+            <div class="col-lg copyright">
+                <a href="#">Privacy Policy</a> &nbsp;|&nbsp;
+                &copy; 2026 RISE Academy · Eastern Europe
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- END FOOTER -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
